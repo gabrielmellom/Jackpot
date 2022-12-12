@@ -17,19 +17,38 @@ const winer_div_1 = document.getElementById("div1")
 const winer_div_2 = document.getElementById("div2")
 const winer_div_3 = document.getElementById("div3")
 const winer_div_4 = document.getElementById("div4")
-const valor = document.getElementById("paragraafo").innerHTML
+const valor = document.getElementById("paragraafo")
 const body = document.querySelector("body")
 const fundo = document.getElementById("fundo_home")
 
 
-//------------------------------------------------------------------------------------
+//------------------------------------------------------------------
+
+ 
+function removervalor(){
+  const valorTotal = document.getElementById("paragraafo").innerHTML
+  let n1 = valorTotal
+  let n2 = 1
+  valor.innerText = n1-n2
+}
+
+
+
+
 
 
 
 btnSaldo.addEventListener("click", () => {
-  let saldo = prompt("Qual o valor que deseja adicionar?")
-  console.log(saldo)
-  const valores = document.getElementById("paragraafo").innerHTML = saldo
+  const valorCredito = document.getElementById("paragraafo").innerHTML
+  let te = prompt("Qual valor quer depositar ?")
+  let n2 = parseInt(te)
+  let n1 = parseInt(valorCredito)
+  valor.innerText=n1+=n2
+  console.log(n1)
+
+
+
+ 
 })
 
 
@@ -47,8 +66,7 @@ function voltarAlavaanca() {
 }
 
 btn.addEventListener("click", function () {
-  fundo.remove()
-  btn.remove()
+  
   const imagem_lavancaa = document.createElement("img")
   imagem_lavancaa.src = "./caça.png"
   imagem_lavancaa.id = "caçaniquel"
@@ -64,16 +82,21 @@ btn.addEventListener("click", function () {
   }
 
 
-  let novo = parseInt(valor)
-  console.log(typeof (novo))
-  if (novo <= 0) {
+ 
+  const paragrafo = document.getElementById("paragraafo").innerHTML
+
+
+  if (paragrafo === '0' ) {
 
     window.alert("Voce esta Sem saldo")
 
   }
 
   else {
+    fundo.remove()
+    btn.remove()
     logica()
+    removervalor()
   }
 
 
