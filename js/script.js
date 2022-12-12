@@ -3,7 +3,7 @@ let img = [
   "./img/cereja.png",
   "./img/diamante.png",
   "./img//melancia.png",
-  "./img//limao.png",
+  //"./img//limao.png",
   "./img//seven.png",
 
 ];
@@ -15,8 +15,8 @@ let img = [
 
 const btn = document.getElementById("aleatorio")
 const btnSaldo = document.getElementById("add")
-const winer = document.getElementById("div")
 
+const winer = document.getElementById("div")
 const winer_div_1 = document.getElementById("div1")
 const winer_div_2 = document.getElementById("div2")
 const winer_div_3 = document.getElementById("div3")
@@ -583,7 +583,7 @@ function logicaGanhos() {
 
   }
   else if (imagem[15].src === imagem[16].src && imagem[17].src === imagem[15].src && imagem[18].src === imagem[15].src && imagem[19].src === imagem[15].src) {
-    console.log("premiado com 4 segunda linha 3")
+    console.log("premiado com 5 segunda linha 5 ")
     criarOK()
     chamarSomWinner()
     MultiplicadorGanho ()
@@ -597,7 +597,7 @@ function logicaGanhos() {
 
   }
   else if (imagem[20].src === imagem[21].src && imagem[22].src === imagem[20].src && imagem[23].src === imagem[10].src && imagem[24].src === imagem[20].src) {
-    console.log("premiado com 4 segunda linha 3")
+    console.log("premiado com 5 segunda 5 linha ")
     criarOK()
     chamarSomWinner()
     MultiplicadorGanho ()
@@ -610,6 +610,67 @@ function logicaGanhos() {
 
 
   }
+  else if (imagem[0].src === imagem[5].src && imagem[10].src === imagem[0].src && imagem[15].src === imagem[0].src && imagem[20].src === imagem[0].src) {
+    console.log("premiado com 5 segunda 5 linha ")
+    criarOK()
+    chamarSomWinner()
+    MultiplicadorGanho ()
+    winer.classList.add("red")    
+    winer_div_6.classList.add("red")
+    winer_div_0101.classList.add("red")
+    winer_div_17.classList.add("red")
+    winer_div_23.classList.add("red")
+
+  }
+  else if (imagem[0].src === imagem[5].src && imagem[10].src === imagem[0].src && imagem[15].src === imagem[0].src) {
+    console.log("premiado com 4 segunda 4 linha ")
+    criarOK()
+    chamarSomWinner()
+    MultiplicadorGanho ()
+    winer.classList.add("red")    
+    winer_div_6.classList.add("red")
+    winer_div_0101.classList.add("red")
+    winer_div_17.classList.add("red")
+  
+
+  }
+  else if (imagem[0].src === imagem[5].src && imagem[10].src === imagem[0].src &&  imagem[20].src === imagem[0].src) {
+    console.log("premiado com 4 segunda 4 linha ")
+    criarOK()
+    chamarSomWinner()
+    MultiplicadorGanho ()
+    winer.classList.add("red")    
+    winer_div_6.classList.add("red")
+    winer_div_0101.classList.add("red")
+   
+    winer_div_23.classList.add("red")
+
+  }
+  
+  else if ( imagem[5].src === imagem[10].src && imagem[15].src === imagem[5].src && imagem[20].src === imagem[5].src) {
+    console.log("premiado com 4 segunda 4 linha ")
+    criarOK()
+    chamarSomWinner()
+    MultiplicadorGanho ()
+        
+    winer_div_6.classList.add("red")
+    winer_div_0101.classList.add("red")
+    winer_div_17.classList.add("red")
+    winer_div_23.classList.add("red")
+
+  }  else if (imagem[0].src === imagem[10].src && imagem[15].src === imagem[0].src && imagem[20].src === imagem[0].src) {
+    console.log("premiado com 4 segunda 4 linha ")
+    criarOK()
+    chamarSomWinner()
+    MultiplicadorGanho ()
+    winer.classList.add("red")    
+   
+    winer_div_0101.classList.add("red")
+    winer_div_17.classList.add("red")
+    winer_div_23.classList.add("red")
+
+  }
+  
   else {
     console.log("tente novamente")
     error()
