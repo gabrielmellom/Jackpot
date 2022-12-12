@@ -1,10 +1,10 @@
 // array com minhas imagens do jogo.
 let img = [
-  "./cereja.png",
-  "diamante.png",
-  "./melancia.png",
-  "./limao.png",
-   "./seven.png",
+  "./img/cereja.png",
+  "./img/diamante.png",
+  //"./img//melancia.png",
+  //"./img//limao.png",
+   //"./img//seven.png",
 
 ];
 //------------------------------------------------------------------------------------
@@ -20,7 +20,9 @@ const winer_div_4 = document.getElementById("div4")
 const valor = document.getElementById("paragraafo")
 const body = document.querySelector("body")
 const fundo = document.getElementById("fundo_home")
-
+const aposta = document.getElementById("btn_aposta")
+const msgwin = document.getElementById("modalWin")
+const mmsloser = document.getElementById("modalLoser")
 
 //------------------------------------------------------------------
 
@@ -32,15 +34,52 @@ function removervalor(){
   valor.innerText = n1-n2
 }
 
+function  addaposta (){
+  const valorCredito = document.getElementById("paragraafo").innerHTML
+  let n1 = parseInt(valorCredito)
+  const valorAposta = document.getElementById("input").value
+ console.log(valorAposta)
+ valor.innerText=n1-valorAposta
+}
 
 
+function  MultiplicadorGanho (){
+  const valorCredito = document.getElementById("paragraafo").innerHTML
+  let n1 = parseInt(valorCredito)
+  const valorAposta = document.getElementById("input").value
+ console.log(valorAposta)
+ valor.innerText=n1+valorAposta*10
+}
 
+
+aposta.addEventListener("click",()=>{
+  
+  const valorCredito = document.getElementById("paragraafo").innerHTML
+  let n1 = parseInt(valorCredito)
+  const valorAposta = document.getElementById("input").value
+  console.log("ok")
+  let aposta = valorAposta
+
+  console.log(aposta)
+  if(aposta > n1){
+    alert("O valor da aposta é MAIOR que seu saldo, por favor adicione mais creditos.")
+  }
+
+
+ 
+
+ 
+
+
+})
 
 
 
 btnSaldo.addEventListener("click", () => {
+  
   const valorCredito = document.getElementById("paragraafo").innerHTML
   let te = prompt("Qual valor quer depositar ?")
+  alert("PIX REREBIDO COM SUCESSO ;)")
   let n2 = parseInt(te)
   let n1 = parseInt(valorCredito)
   valor.innerText=n1+=n2
@@ -53,9 +92,10 @@ btnSaldo.addEventListener("click", () => {
 
 
 function criarOK() {
-  const div = document.createElement("div")
+  const div = document.createElement("img")
   div.className = "divremmoverdivremmover"
   div.id = "divremmover"
+  div.src="./img/winer.jpg"
   body.append(div)
   setTimeout(() => console.log(div), 10000)
 }
@@ -66,9 +106,11 @@ function voltarAlavaanca() {
 }
 
 btn.addEventListener("click", function () {
-  
+  const valorAposta = document.getElementById("input").value
   const imagem_lavancaa = document.createElement("img")
-  imagem_lavancaa.src = "./caça.png"
+  const valorCredito = document.getElementById("paragraafo").innerHTML
+  let n1 = parseInt(valorCredito)
+  imagem_lavancaa.src = "./img/./caça.png"
   imagem_lavancaa.id = "caçaniquel"
   imagem_lavancaa.className = "alavanca"
   body.append(imagem_lavancaa)
@@ -81,14 +123,15 @@ btn.addEventListener("click", function () {
     remover.remove()
   }
 
-
- 
   const paragrafo = document.getElementById("paragraafo").innerHTML
-
-
+  
   if (paragrafo === '0' ) {
 
     window.alert("Voce esta Sem saldo")
+  }
+  else if(valorAposta > n1 ){
+
+    window.alert("O valor da sua aposta é MAIOR que seu saldo")
 
   }
 
@@ -96,7 +139,7 @@ btn.addEventListener("click", function () {
     fundo.remove()
     btn.remove()
     logica()
-    removervalor()
+    
   }
 
 
@@ -372,6 +415,7 @@ function removerClasses() {
 //------------------------------------------------------------------------------------
 
 function logicaGanhos() {
+  
   let imagem = document.querySelectorAll("img")
 
   console.log(imagem)
@@ -379,6 +423,9 @@ function logicaGanhos() {
     console.log("premiado com 5")
     criarOK()
     chamarSomWinner()
+    MultiplicadorGanho ()
+    
+    
     winer.classList.add("red")
     winer_div_1.classList.add("red")
     winer_div_2.classList.add("red")
@@ -391,6 +438,9 @@ function logicaGanhos() {
     console.log("Premiado com 4 em ordem")
     criarOK()
     chamarSomWinner()
+    MultiplicadorGanho ()
+    
+    
     winer.classList.add("red")
     winer_div_1.classList.add("red")
     winer_div_2.classList.add("red")
@@ -400,6 +450,9 @@ function logicaGanhos() {
     console.log("Premiado com 4 fora de ordem 1-2-3-5 ordem ")
     criarOK()
     chamarSomWinner()
+    MultiplicadorGanho ()
+    
+    
     winer.classList.add("red")
     winer_div_1.classList.add("red")
     winer_div_2.classList.add("red")
@@ -410,6 +463,9 @@ function logicaGanhos() {
     console.log("Premiado com 4 fora de ordem 1-2-4-5 ordem ")
     criarOK()
     chamarSomWinner()
+    MultiplicadorGanho ()
+    
+    
     winer.classList.add("red")
     winer_div_1.classList.add("red")
     winer_div_3.classList.add("red")
@@ -420,6 +476,9 @@ function logicaGanhos() {
     console.log("Premiado com 4 fora de ordem 2-3-4-5 ordem ")
     criarOK()
     chamarSomWinner()
+    MultiplicadorGanho ()
+    
+    
     winer_div_1.classList.add("red")
     winer_div_2.classList.add("red")
     winer_div_3.classList.add("red")
@@ -430,6 +489,9 @@ function logicaGanhos() {
     console.log("Premiado com 4 fora de ordem 1-3-4-5 ordem ")
     criarOK()
     chamarSomWinner()
+    MultiplicadorGanho ()
+    
+    
     winer.classList.add("red")
     winer_div_2.classList.add("red")
     winer_div_3.classList.add("red")
@@ -440,6 +502,9 @@ function logicaGanhos() {
     console.log("Premiado com 3 em ordem ")
     criarOK()
     chamarSomWinner()
+    MultiplicadorGanho ()
+    
+    
     winer.classList.add("red")
     winer_div_1.classList.add("red")
     winer_div_2.classList.add("red")
@@ -449,13 +514,21 @@ function logicaGanhos() {
     console.log("Premiado com 3 fora de 1-2-4 ordem ")
     criarOK()
     chamarSomWinner()
-
+    MultiplicadorGanho ()
+    msgwin.classList.remove("win")
+    valoraposta ()
+    msgwin.classList.add("classwin")
+    
 
   }
   else if (imagem[0].src === imagem[1].src && imagem[4].src === imagem[0].src) {
     console.log("Premiado com 3 fora de 1-2-5 ordem ")
     criarOK()
     chamarSomWinner()
+    
+    msgwin.classList.remove("win")
+    msgwin.classList.add("classwin")
+    
     winer.classList.add("red")
     winer_div_1.classList.add("red")
     winer_div_4.classList.add("red")
@@ -465,6 +538,11 @@ function logicaGanhos() {
     console.log("Premiado com 3 fora de ordem 1-3-4  ")
     criarOK()
     chamarSomWinner()
+    MultiplicadorGanho ()
+    msgwin.classList.remove("win")
+    valoraposta ()
+    msgwin.classList.add("classwin")
+    
     winer.classList.add("red")
     winer_div_2.classList.add("red")
     winer_div_3.classList.add("red")
@@ -475,6 +553,7 @@ function logicaGanhos() {
   else {
     console.log("tente novamente")
     error()
+    addaposta ()
   }
   
 

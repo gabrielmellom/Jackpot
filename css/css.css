@@ -22,7 +22,8 @@ body h1 {
     position: absolute;
     left: 12em;
     top: 49.2em;
-    width: 39em;
+    width: 48em;
+
     border-radius: 243px 47px 45px 63px;
     height: 5em;
 }
@@ -112,26 +113,34 @@ body section div{
 }
 .red{
    
-    animation: pulsar 0.4s ;
-    animation-iteration-count: 8;
+    animation: pulsar 0.5s ;
+    animation-iteration-count: 12;
 }
 .valor {
   
-    margin-left: 1.3em;
+    margin-left: 0.3em;
     margin-top: -1em;
 }
 #add {
-    width: 6em;
+    width: 5em;
     font-size: 2em;
     height: 2.5em;
     position: absolute;
-    left: 19em;
-    top: 24.6em;
+    left: 8em;
+    top: 24.9em;
     cursor: pointer;
     z-index: 1;
-    background-color: #b10808;
+    background-color: #ff0000b3;
     border: none;
+    color: aliceblue;
     border-radius: 0.5em;
+}
+#input{
+    position: absolute;
+    width: 1.7em;
+    height: 1.7em;
+    left: 16em;
+    font-size: 3em;
 }
 .div_box {
     /* position: absolute; */
@@ -141,7 +150,7 @@ body section div{
     z-index: 1;
     margin-top: 2em;
     font-family: 'Digital-Numbers';
-    margin-left: -2em;
+    margin-left: 2em;
 }
 .borda {
     position: absolute;
@@ -152,15 +161,51 @@ body section div{
 }
 
 .divremmoverdivremmover {
-    border: solid;
-    width: 13em;
-    height: 28em;
+    /* border: solid; */
+    width: 37em;
+    height: 14em;
     background-color: #7e88d9;
     position: absolute;
-    top: 13pc;
+    top: -2pc;
+    animation: pulsar 0.5s;
+    animation-iteration-count: 12;
+    left: 24em;
 }
 #section_principal {
     margin-top: 15pc;
+}
+#btn_aposta {
+    position: absolute;
+    left: 19em;
+    background-color: red;
+    top: 24.6em;
+    width: 5em;
+    height: 2.5em;
+    color: aliceblue;
+    cursor: pointer;
+    border: none;
+    font-size: 2em;
+}
+
+.regras {
+    margin-top: 1em;
+    width: 73em;
+    position: absolute;
+    height: 14em;
+    border: solid black;
+    left: 7em;
+    color: aliceblue;
+    top: 59Em;
+}
+.h3 { text-align: center;
+    font-size: 3em;
+    font-family: system-ui;
+    margin-bottom: 0.5em;
+}
+.ul{
+    text-align: center;
+    font-family: system-ui;
+    
 }
 @keyframes pulsar {
     0%{
