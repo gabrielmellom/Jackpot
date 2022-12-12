@@ -127,7 +127,7 @@ body section div{
     height: 2.5em;
     position: absolute;
     left: 7.7em;
-    top: 24.9em;
+    top: 24.6em;
     cursor: pointer;
     z-index: 1;
     background-color: #ff0000b3;
@@ -138,7 +138,7 @@ body section div{
 #input {
     position: absolute;
     width: 1.7em;
-    height: 1.7em;
+    height: 1.5em;
     left: 16em;
     font-size: 3em;
     top: 16.4em;
